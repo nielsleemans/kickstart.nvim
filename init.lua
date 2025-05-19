@@ -242,6 +242,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-dadbod',
+  'kristijanhusak/vim-dadbod-completion',
+  'kristijanhusak/vim-dadbod-ui',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -666,6 +669,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         intelephense = {},
+        ['blade-formatter'] = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -756,13 +760,14 @@ require('lazy').setup({
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = 5000,
             lsp_format = 'fallback',
           }
         end
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        blade = { 'blade-formatter' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
