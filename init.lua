@@ -670,6 +670,8 @@ require('lazy').setup({
       local servers = {
         intelephense = {},
         ['blade-formatter'] = {},
+        prettierd = {},
+        ['typescript-language-server'] = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -768,6 +770,8 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         blade = { 'blade-formatter' },
+        html = { 'prettierd' },
+        javascript = { 'prettierd' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
